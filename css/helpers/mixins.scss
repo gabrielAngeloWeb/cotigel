@@ -1,0 +1,41 @@
+@mixin size($width, $height) {
+     width: $width;
+     height: $height;
+}
+
+@mixin flexbox($flex-direction, $align-items, $justify-content) {
+     @extend %active-flexbox;
+
+     // setting flex-direction
+     @if $flex-direction == row {
+          @extend %flex-direction-row;
+     } @else if $flex-direction == column {
+          @extend %flex-direction-column;
+     }
+
+     // setting align-items
+     @if $align-items == flex-start {
+          @extend %align-items-flex-start;
+     } @else if $align-items == flex-end{
+          @extend %align-items-flex-end;
+     } @else if $align-items == center{
+          @extend %align-items-center;
+     } @else if $align-items == space-between {
+          @extend %align-items-space-between;
+     } @else if $align-items == space-around {
+          @extend %align-items-space-around;
+     }
+
+     // setting justify-content
+     @if $justify-content == flex-start {
+          @extend %justify-content-flex-start;
+     } @else if $justify-content == flex-end {
+          @extend %justify-content-flex-end;
+     } @else if $justify-content == center {
+          @extend %justify-content-center;
+     } @else if $justify-content == space-between {
+          @extend %justify-content-space-between;
+     } @else if $justify-content == space-around {
+          @extend %justify-content-space-around;
+     }
+}
